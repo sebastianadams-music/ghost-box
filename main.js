@@ -1,6 +1,14 @@
-var players = document.getElementById("players")
 
 var audioCtx = new AudioContext()
+document.getElementById("start").addEventListener("click", runMain, true)
+
+
+function runMain() {
+
+
+
+var players = document.getElementById("players")
+
 
 // var newNoise = document.createElement("audio")
 // newNoise.crossOrigin = "anonymous";
@@ -60,7 +68,12 @@ for (let i = 1; i < 5; i++) {
     var newGap = document.createElement("br")
     players.appendChild(newGap)
 
+
     
+}
+
+sequence()
+
 }
 
 

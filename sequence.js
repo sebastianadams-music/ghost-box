@@ -1,11 +1,14 @@
 var volumeCurve = new Float32Array(9);
 volumeCurve = [0.1, 0.1, 0.2, 0.4, 0.6, .4, .2, .1, .1]
 
+function sequence() {
+  
 randomStation(1)
 ramp(0, 0.7, 2, 1)
 randomStation(2)
 createNoise(10000, 1600)
 loop()
+}
 
 async function loop() {
   // let durationSecs = 2 + getRandomInt(8)
