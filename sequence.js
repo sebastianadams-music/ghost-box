@@ -8,7 +8,8 @@ createNoise(10000, 1600)
 loop()
 
 async function loop() {
-  let durationSecs = 2 + getRandomInt(8)
+  // let durationSecs = 2 + getRandomInt(8)
+  let durationSecs = 7
   for (let i = 0; i < 100; i++){
     let randomBand = (getRandomInt(35) * 100) + 1000
     let bandpass = document.bandpass
