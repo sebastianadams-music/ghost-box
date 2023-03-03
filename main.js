@@ -17,7 +17,7 @@ var players = document.getElementById("players")
 // newNoise.autoplay = "autoplay"
 // newNoise.preload = ""
 
-for (let i = 1; i < 5; i++) {
+for (let i = 1; i < 9; i++) {
 
     var newAudio = document.createElement("audio")
     newAudio.crossOrigin = "anonymous";
@@ -47,7 +47,7 @@ for (let i = 1; i < 5; i++) {
 
     // volume slider with all relevant attributes (for visual feedback only)
     var newVolume = document.createElement("input")
-    newVolume.hidden = true
+    // newVolume.hidden = true // comment out to show volume 
     newVolume.type =  "range" 
     newVolume.min =  0
     newVolume.max =  1 
@@ -156,7 +156,7 @@ function randomStation(playerid) {
     // gain.setValueAtTime(0.05, audioCtx.currentTime)
     // gain.exponentialRampToValueAtTime(.6, audioCtx.currentTime + 15)
     let station = "currentstation" + playerid
-    document.getElementById(station).textContent = "playing from " + url
+    document.getElementById(station).textContent = url
 }
 
 function volume(element, volume) {
