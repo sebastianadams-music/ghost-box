@@ -157,7 +157,7 @@ function randomStation(playerid) {
     // gain.setValueAtTime(0.05, audioCtx.currentTime)
     // gain.exponentialRampToValueAtTime(.6, audioCtx.currentTime + 15)
     let station = "currentstation" + playerid
-    document.getElementById(station).textContent = url
+    document.getElementById(station).textContent = url + url.shuffle()
 }
 
 function volume(element, volume) {
@@ -213,6 +213,20 @@ function getRandomInt(max) {
   }
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
+String.prototype.shuffle = function () {
+  var a = this.split(""),
+      n = a.length;
+
+  for(var i = n - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i];
+      a[i] = a[j];
+      a[j] = tmp;
+  }
+  return a.join("");
+}
+
 
 
 // RADIO STATIONS

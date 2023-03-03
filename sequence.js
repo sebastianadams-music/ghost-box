@@ -45,7 +45,7 @@ async function loop(i, duration) {
 
   let randomBand = (getRandomInt(35) * 100) + 1000
 
-  bandpass.frequency.value = randomBand
+  bandpass.frequency.exponentialRampToValueAtTime(randomBand, audioCtx.currentTime + durationSecs)
   
   noiseGain.gain.cancelScheduledValues(audioCtx.currentTime)
   noiseGain.gain.setValueCurveAtTime(volumeCurve, time, durationSecs)
