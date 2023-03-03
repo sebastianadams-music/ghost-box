@@ -12,6 +12,10 @@ function sequence() {
 randomStation(1)
 // ramp(0, 0.7, 2, 1)
 randomStation(2)
+randomStation(3)
+randomStation(4)
+randomStation(5)
+randomStation(6)
 createNoise(10000, 1600)
 scheduler()
 }
@@ -23,8 +27,8 @@ function scheduler() {
   // While there are notes that will need to play before the next interval,
   // schedule them and advance the pointer.
   while (nextNoteTime < audioCtx.currentTime + scheduleAheadTime) {
-    // let rand = (Math.random() * .6) + .5
-    loop(indexSequence, .5)
+    let rand = (Math.random() * .2) + .5
+    loop(indexSequence, rand)
     indexSequence++
 
   }
@@ -47,7 +51,7 @@ async function loop(i, duration) {
   noiseGain.gain.setValueCurveAtTime(volumeCurve, time, durationSecs)
 
   
-  let j = 1 + (i % 6)
+  let j = 1 + (i % 8)
   console.log("loop", i, j)
   let k = 1 + ((i + 1) % 8)
   let l = 1 + ((i + 2) % 8)
@@ -58,15 +62,19 @@ async function loop(i, duration) {
   let q = 1 + ((i + 7) % 8)
 
   console.log(j, k, l, m)
-  randomStation(l)
-  randomStation(m)
-  randomStation(n)
-  randomStation(o)
+  // randomStation(l)
+  // randomStation(m)
+  // randomStation(n)
+  // randomStation(o)
   randomStation(p)
   randomStation(q)
 
   ramp(1, 0, durationSecs, (j)) // startval, endval, seconds, playerid
   ramp(0, 1, durationSecs, (k))
+  volume("player" + l, 0)
+  volume("player" + m, 0)
+  volume("player" + n, 0)
+  volume("player" + o, 0)
   nextNoteTime = duration + time + 0.001
 
     

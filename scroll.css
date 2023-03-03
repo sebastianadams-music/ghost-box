@@ -1,3 +1,11 @@
+button:active{
+  background:rgb(68, 68, 62);
+}
+
+button:focus{
+  background:olive;
+}
+
 #scroll-container {
     /* border: 3px solid black;
     border-radius: 5px; */

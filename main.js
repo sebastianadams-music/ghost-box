@@ -1,11 +1,12 @@
 
 var audioCtx = new AudioContext()
+
 document.getElementById("start").addEventListener("click", runMain, true)
 
 
 function runMain() {
 
-
+// document.getElementById("supersonique").textContent = "loading..."
 
 var players = document.getElementById("players")
 
@@ -204,7 +205,7 @@ async function ramp(currentValue, endValue, time, playerid) {
 
 
 
-
+  
 // helper functions
 
 function getRandomInt(max) {
